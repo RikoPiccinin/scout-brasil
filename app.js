@@ -31,10 +31,12 @@ const app = express()
 mongoose.connect("mongodb+srv://rikopiccinin_db_user:Riko27xtz@dash.ur51ogs.mongodb.net/?appName=dash")
 
 app.set("view engine", "ejs")
-app.set('trust proxy', 1)
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"))
 app.use('/uploads', express.static('/public/uploads'))
+
+app.set('trust proxy', 1)
 
 app.use(session({
     secret: "scoutsecret",
