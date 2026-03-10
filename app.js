@@ -51,7 +51,8 @@ app.use(session({
 
 
 app.get("/", (req, res) => {
-    res.render("login")
+    res.send("APP ONLINE")
+   // res.render("login")
 })
 
 
