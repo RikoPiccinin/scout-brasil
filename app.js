@@ -42,7 +42,7 @@ app.use(session({
     secret: "scoutsecret",
     resave: false,
     saveUninitialized: false,
-    app.set('trust proxy', 1)
+    cookie: { secure: false }
 }))
 
 
