@@ -51,7 +51,11 @@ app.use(session({
 
 
 app.get("/", (req, res) => {
-     res.render("/login")
+    res.redirect("/login")
+})
+
+app.get("/login", (req, res) => {
+    res.render("login")
 })
 
 
