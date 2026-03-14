@@ -55,7 +55,7 @@ app.get("/", (req, res) => {
 })
 
 app.get("/login", (req, res) => {
-    res.render("dashboard")
+    res.render("admin/dashboard")
 })
 
 
