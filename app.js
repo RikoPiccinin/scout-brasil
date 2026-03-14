@@ -51,11 +51,11 @@ app.use(session({
 
 
 app.get("/", (req, res) => {
-    res.redirect("/login")
+    res.redirect("login")
 })
 
 app.get("/login", (req, res) => {
-    res.render("/dashboard")
+    res.render("dashboard")
 })
 
 
