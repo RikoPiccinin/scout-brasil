@@ -28,33 +28,31 @@ const Jogador = require("./models/jogador")
 
 const app = express()
 
-// mongoose.connect("mongodb+srv://rikopiccinin_db_user:Riko27xtz@dash.ur51ogs.mongodb.net/?appName=dash")
+//mongoose.connect("mongodb+srv://rikopiccinin_db_user:Riko27xtz@dash.ur51ogs.mongodb.net/dash")
+mongoose.connect("mongodb+srv://rikopiccinin_db_user:Riko27xtz@dash.ur51ogs.mongodb.net/dash")
+.then(() => {
+    console.log("Mongo conectado");
 
-mongoose.connect(process.env.MONGO_URI)
-.then(() => console.log("Mongo conectado"))
-.catch(err => console.log(err))
+   
+})
+.catch(err => {
+    console.log("❌ ERRO REAL DO MONGO:");
+    console.log(err);
+})
 
 app.set("view engine", "ejs")
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"))
 app.use('/uploads', express.static('public/uploads'))
 
-app.set('trust proxy', 1)
-
 app.use(session({
     secret: "scoutsecret",
     resave: false,
-    saveUninitialized: false,
-    cookie: { secure: false }
+    saveUninitialized: false
 }))
 
 
 app.get("/", (req, res) => {
-    res.redirect("/login")
-})
-
-app.get("/login", (req, res) => {
     res.render("login")
 })
 
@@ -136,7 +134,9 @@ jogadores = await Jogador.find()
 
 })
 
-
+app.get("/login", (req, res) => {
+    res.render('login')
+})
 
 app.post("/login", (req, res) => {
 
@@ -285,15 +285,15 @@ res.render("ranking",{jogadores})
 
 
 // ROTA PARA USAR NO DESKTOP
-//app.listen(3000, () => {
-  //  console.log("Servidor rodando na porta 3000")
-//})
+app.listen(3000, () => {
+    console.log("Servidor rodando na porta 3000")
+})
 
 
 //ROTA PARA USAR NO RENDER
 
-const PORT = process.env.PORT || 3000
+/*const PORT = process.env.PORT || 3000
 
 app.listen(PORT, () => {
 console.log("Servidor rodando")
-})
+})*/
