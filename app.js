@@ -190,8 +190,9 @@ app.post("/enviar", upload.single("foto"), async (req, res) => {
         defesa: req.body.defesa,
         fisico: req.body.fisico,
 
-        foto: req.file ? req.file.filename : null
+        foto: req.file ? req.file.filename : null,
 
+        youtube: String 
     });
 
     await jogador.save();
@@ -242,7 +243,8 @@ passe: req.body.passe,
 finalizacao: req.body.finalizacao,
 drible: req.body.drible,
 defesa: req.body.defesa,
-fisico: req.body.fisico
+fisico: req.body.fisico,
+youtube: req.body.youtube
 
 }
 
@@ -285,15 +287,15 @@ res.render("ranking",{jogadores})
 
 
 // ROTA PARA USAR NO DESKTOP
-/*app.listen(3000, () => {
+app.listen(3000, () => {
     console.log("Servidor rodando na porta 3000")
-})*/
+})
 
 
 //ROTA PARA USAR NO RENDER
 
-const PORT = process.env.PORT || 3000
+/*const PORT = process.env.PORT || 3000
 
 app.listen(PORT, () => {
 console.log("Servidor rodando")
-})
+})*/

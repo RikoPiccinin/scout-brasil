@@ -132,6 +132,23 @@ width="200">
 
 </div>
 
+<% if(jogador.youtube){ %>
+
+<div class="card mt-4">
+    <div class="card-body">
+        <h4>Vídeo</h4>
+
+        <iframe width="100%" height="400"
+            src="<%= jogador.youtube.replace('watch?v=', 'embed/') %>"
+            frameborder="0"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+</div>
+
+<% } %>
+
 </div>
 
 <script>

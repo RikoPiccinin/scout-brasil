@@ -15,7 +15,8 @@ drible: Number,
 defesa: Number,
 fisico: Number,
 
-foto: String
+foto: String,
+youtube: String
 
 })
 
