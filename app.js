@@ -285,15 +285,15 @@ res.render("ranking",{jogadores})
 
 
 // ROTA PARA USAR NO DESKTOP
-app.listen(3000, () => {
+/*app.listen(3000, () => {
     console.log("Servidor rodando na porta 3000")
-})
+})*/
 
 
 //ROTA PARA USAR NO RENDER
 
-/*const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000
 
 app.listen(PORT, () => {
 console.log("Servidor rodando")
-})*/
+})
