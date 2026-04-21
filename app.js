@@ -141,7 +141,7 @@ app.get("/login", (req, res) => {
 app.post("/login", (req, res) => {
 
     const { usuario, senha } = req.body
-    if (usuario === "galo" && senha === "galo") {
+    if (usuario === "galo" && senha === "galo123") {
         req.session.admin = true
         res.redirect("/admin")
 
